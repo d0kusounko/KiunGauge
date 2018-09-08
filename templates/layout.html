@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 共通ヘッダ -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes">
+
+    <!-- Twitterカード設定 -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@d0kusounko">
+    <meta name="twitter:creator" content="@d0kusounko">
+    <meta property="og:title" content="機運ゲージ">
+    <meta property="og:description" content="機運ゲージにおいでよ　生きては帰さない">
+    <meta property="og:image" content="https://kiun-gauge.herokuapp.com/static/twitter_card.png">
+
+    <!-- タイトル -->
+    {% if title %}
+      <title>{{ title }}</title>
+    {% else %}
+      <title>機運ゲージ</title>
+    {% endif %}
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+
+    <!-- コンテンツ部分 -->
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+
+    <!-- 共通フッター -->
+    <div id="footer">
+      <hr>
+      <footer>
+        {% block footer %}
+        <small>
+          &copy; Copyright 2018 by <a href="https://twitter.com/d0kusounko/">ド</a>.
+        </small>
+        {% endblock %}
+      </footer>
+    </div>
+  </body>
+</html>

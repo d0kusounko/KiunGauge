@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+<!-- HEAD -->
+{% block head %}
+<script type="text/javascript">{% include 'js/settings.js' %}</script>
+{% endblock %}
+
+<!-- CONTENT -->
+{% block content %}
+
+<h1>機運ゲージ設定</h1>
+
+<form method="post" id="kiun_form">
+
+  <!-- 項目名設定 -->
+  <h2>項目名</h2>
+
+  {% for kiun_name in kiun_names %}
+    <p><input type="text" name="kiun_names" maxlength="10" value="{{ kiun_name }}"></p>
+    <p></p>
+  {% endfor %}
+
+</form>
+
+<p><a href="{{ url_for('settings_apply') }}" class="settings_apply">設定</a></p>
+<p><a href="{{ url_for('index') }}">戻る</a></p>
+
+{% endblock %}

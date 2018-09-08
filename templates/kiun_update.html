@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+<!-- HEAD -->
+{% block head %}
+{% endblock %}
+
+<!-- CONTENT -->
+{% block content %}
+
+<h1>機運ゲージ</h1>
+
+機運ゲージをツイートしました。<br>
+
+{% if kiun_max_names|length >= 1 %}
+  <font color="#ff0000">
+  {% for name in kiun_max_names %}
+    {% if loop.index0 >= 1 %}
+      と
+    {% endif %}
+    {{ name }}
+  {% endfor %}
+  の機運高まってきた
+  </font>
+{% endif %}
+
+<p>
+三菱UFJ銀行<br>
+針中野支店 普通 4618553<br>
+ムロ シンイチ<br>
+<br>
+どうですか？<br>
+</p>
+
+<p><a href="{{ url_for('index') }}">戻る</a></p>
+
+{% endblock %}
